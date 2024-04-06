@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import tomatopic from "./public/my-pic.png";
+import tomatopic from "./public/my-pic.png?raw";
 ---
 
 <div class="flip-card">
@@ -8,8 +7,8 @@ import tomatopic from "./public/my-pic.png";
     <div class="flip-card-front">
       <div class="front-card-div">
         <div class="centered-div">
-          <Image
-            src={tomatopic}
+          <img
+            src="/my-pic.png"
             style="width:200px;height:200px;margin:2rem"
             alt="Tomato Wilbur Yap"
           />
@@ -36,8 +35,8 @@ import tomatopic from "./public/my-pic.png";
           </li>
         </ul>
 
-        <Image
-          src={tomatopic}
+        <img
+          src="/my-pic.png"
           style="width:100px;height:100px;margin-top:1rem;margin-bottom:1rem"
           alt="Tomato Wilbur Yap"
         />
