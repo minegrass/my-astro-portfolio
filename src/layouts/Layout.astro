@@ -1,0 +1,95 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Primary Meta Tags -->
+    <title>Tomato Wilbur Yap</title>
+    <meta name="title" content="Tomato Wilbur Yap" />
+    <meta
+      name="description"
+      content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Tomato Wilbur Yap" />
+    <meta
+      property="og:description"
+      content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+    />
+    <meta property="og:image" content="seo-image-link" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="" />
+    <meta property="twitter:title" content="Tomato Wilbur Yap" />
+    <meta
+      property="twitter:description"
+      content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+    />
+    <meta property="twitter:image" content="seo-image-link" />
+
+    <meta name="keywords" content="Tomato Wilbur Yap, Tomato Yap, Wilbur Yap" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="author" content="Tomato Wilbur Yap" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  * {
+    font-family: "Source Code Pro", "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    /* dark mode */
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

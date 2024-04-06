@@ -1,0 +1,103 @@
+---
+import SocialIcon from "./SocialIcon.astro";
+import EmailIcon from "./public/email.svg?raw";
+import DiscordIcon from "./public/disc.svg?raw";
+import FacebookIcon from "./public/fb.svg?raw";
+import InstagramIcon from "./public/insta.svg?raw";
+---
+
+<section>
+  <div class="contact-div">
+    <div class="contact-inner-div">
+      <h2>Reach dis boi</h2>
+      <p>
+        I'm not sure how you stumbled upon this site, but if you're looking to
+        get in touch, you've come to the right place. Here's what you need.
+      </p>
+      <div class="contact-list">
+        <div class="grid-container">
+          <p>facebook:</p><a href="https://www.facebook.com/wilbur.yap.7">
+            https://www.facebook.com/wilbur.yap.7</a
+          ><p>discord:</p><a href="https://discord.com/users/354146574533656586"
+            >tomatoyap</a
+          ><p>github:</p><a href="https://github.com/minegrass"
+            >https://github.com/minegrass</a
+          >
+        </div>
+
+        <!-- <ul>
+          <li class="seperate-text">
+            <p>facebook:</p><a href="https://www.facebook.com/wilbur.yap.7">
+              https://www.facebook.com/wilbur.yap.7</a
+            >
+          </li>
+          <li class="seperate-text">
+            <p>discord:</p>
+            <a href="https://discord.com/users/354146574533656586">tomatoyap</a>
+            <li class="seperate-text">
+              <p>github:</p><a href="https://github.com/minegrass"
+                >https://github.com/minegrass</a
+              >
+            </li>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 0.3fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 2px;
+    }
+
+    .grid-container p {
+      text-align: right;
+    }
+
+    .grid-container a {
+      text-align: left;
+    }
+
+    .contact-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .contact-inner-div {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-list {
+      background-color: black;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+      list-style: none;
+    }
+    .contact-list a {
+      color: white;
+    }
+
+    .contact-list a:hover {
+      color: #11ff11;
+    }
+  </style>
+</section>

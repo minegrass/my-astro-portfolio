@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import tomatopic from "./public/my-pic.png";
+---
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="front-card-div">
+        <div class="centered-div">
+          <Image
+            src={tomatopic}
+            style="width:200px;height:200px;margin:2rem"
+            alt="Tomato Wilbur Yap"
+          />
+        </div>
+
+        <div class="desc-div">
+          <div>
+            <h1 class="name-text">Tomato Wilbur Yap</h1>
+            <p class="pink-text">Normal Guy</p>
+          </div>
+
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <div class="desc-div">
+        <ul class="tag-ul">
+          <li><h1>Tomato Wilbur Yap</h1></li>
+          <li>
+            <p>
+              Virtual Character / Life Enjoyer / Tinker / 🏀 for fun / Gen-Z
+            </p>
+          </li>
+        </ul>
+
+        <Image
+          src={tomatopic}
+          style="width:100px;height:100px;margin-top:1rem;margin-bottom:1rem"
+          alt="Tomato Wilbur Yap"
+        />
+        <div class="bout-me-div">
+          <h5 style="font-size:1.3rem">About Me</h5>
+          <p style="color:#E2E8F0;line-height:30px;">
+            Random character that you can meet everywhere in the life game.
+            Learning everything that I love and making things work! Currently
+            exploring in different fields, including but not limited to tech
+            stuff, web 2/3, business, digital marketing. If you like my ideas or
+            my products please do <a class="link-a" href="#top">support me</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+    background-color: transparent;
+    width: 90vw;
+    height: 500px;
+    margin: 20px;
+    /* white glowing effect */
+
+    transform: box-shadow 0.8s;
+    /* Remove this if you don't want the 3D effect */
+    /* perspective: 1000px;  */
+  }
+
+  .centered-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card:hover {
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+  }
+
+  /* Position the front and back side */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .front-card-div {
+    /* left right arrangement */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    box-shadow: 2px white;
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: transparent;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .pink-text {
+    color: #ff00ff;
+  }
+  .desc-div {
+    /* centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .name-text {
+    font-size: 5em;
+  }
+  .tag-ul {
+    font-size: 1rem;
+    list-style: none;
+  }
+  .bout-me-div {
+    width: 50%;
+  }
+  .link-a {
+    color: #ff00ff;
+  }
+</style>
