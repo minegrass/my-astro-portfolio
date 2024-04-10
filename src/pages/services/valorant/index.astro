@@ -46,51 +46,43 @@ import ContactIcon from "../../../components/services/valorant/ContactIcon.astro
         </h1>
       </div>
     </section>
-    <section class="bg-gray-900 py-24" id="features">
+    <!-- seperator -->
+    <div class="my-10"></div>
+    <section class="bg-gray-900" id="features">
       <div class="mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         <h2
           class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
         >
           Our Services
         </h2>
-        <div>
-          <ul class="flex flex-row gap-x-5 justify-center items-center">
-            <li>Rank Boosting</li>
-            <li>Per Win</li>
-            <li>Level Boosting</li>
-            <li>Battlepass Boosting</li>
-          </ul>
-          <!-- price and service info page -->
-        </div>
-        <div
-          id="services-box"
-          class="flex flex-row justify-center items-center"
-        >
+
+        <div id="services-box" class="grid grid-cols-3 gap-6">
           <!-- services paste here -->
 
           <ServiceCard
-            title="Rank Boosting"
-            imgHref="/services/valorant/rankup.png"
-            description="Improve your rank and compete with the best players."
+            title="Rank Services"
+            imgHref="https://via.placeholder.com/400x400"
+            description={["Boosting Services", "Deranking Services"]}
+            link="./valorant/boost"
           />
           <ServiceCard
-            title="Rank Boosting"
+            title="Grinding Services"
             imgHref="/services/valorant/rankup.png"
-            description="Improve your rank and compete with the best players."
+            description={["Battlepass grind", "Level Up grind"]}
+            link="./valorant/grind"
           /><ServiceCard
-            title="Rank Boosting"
-            imgHref="/services/valorant/rankup.png"
-            description="Improve your rank and compete with the best players."
-          /><ServiceCard
-            title="Rank Boosting"
-            imgHref="/services/valorant/rankup.png"
-            description="Improve your rank and compete with the best players."
+            title="Coaching Services"
+            imgHref="/services/valorant/kayo.png"
+            description={["Video Review", "Live Coaching"]}
+            link="./valorant/coach"
           />
         </div>
       </div>
     </section>
+    <!-- seperator -->
+    <div class="my-10"></div>
     <!-- make a "Who Are We" Section -->
-    <section class="bg-gray-900 py-24" id="about">
+    <section class="bg-gray-900" id="about">
       <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         <h2
           class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
@@ -118,7 +110,7 @@ import ContactIcon from "../../../components/services/valorant/ContactIcon.astro
         </div>
       </div>
     </section>
-    <section class="bg-gray-900 py-24" id="testimonials">
+    <section class="bg-gray-900" id="testimonials">
       <div class="max-w-screen-lg mx-auto px-4 py-16 container">
         <h2
           class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white valo-font"
@@ -149,38 +141,6 @@ import ContactIcon from "../../../components/services/valorant/ContactIcon.astro
             caption="Radiant order finished in Jan-2024"
             img="/services/valorant/rad1.jpg"
             href="#"
-          />
-        </div>
-      </div>
-    </section>
-    <section class="bg-gray-900 py-24" id="cta">
-      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
-        <h2
-          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
-        >
-          Contact Us
-        </h2>
-        <!-- putting my contacts icon here -->
-        <p class="text-lg md:text-xl text-center mb-8 text-white">
-          Ready to take your Valorant game to the next level? Get in touch with
-          us today!
-        </p>
-        <div
-          id="icon-box"
-          class="flex flex-col gap-x-5 md:flex-row justify-center items-center"
-        >
-          <!-- icon pasted here -->
-          <ContactIcon
-            href="https://www.shopee.com.my"
-            img="/services/valorant/svg/shopee-icon.svg"
-          />
-          <ContactIcon
-            href="https://www.shopee.com.my"
-            img="/services/valorant/svg/shopee-icon.svg"
-          />
-          <ContactIcon
-            href="https://www.shopee.com.my"
-            img="/services/valorant/svg/shopee-icon.svg"
           />
         </div>
       </div>

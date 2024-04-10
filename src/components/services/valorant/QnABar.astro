@@ -1,0 +1,18 @@
+---
+interface Props {
+    question: string;
+    answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<div
+    class="collapse collapse-arrow bg-gray-800 hover:bg-gray-700 transition-all ease-in-out"
+>
+    <input type="checkbox" />
+    <div class="collapse-title text-2xl font-bold">{question}</div>
+    <div class="collapse-content">
+        <p class="text-lg">{answer}</p>
+    </div>
+</div>

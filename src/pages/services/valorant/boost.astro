@@ -1,5 +1,8 @@
 ---
 import ValorantLayout from "../../../layouts/ValorantLayout.astro";
+import ServiceOptionSection from "../../../components/services/valorant/ServiceOptionSection.jsx";
+import ServiceCard from "../../../components/services/valorant/ServiceCard.astro";
+import QnABar from "../../../components/services/valorant/QnABar.astro";
 ---
 
 <ValorantLayout title="Tom Valorant Boosting Service Malaysia">
@@ -18,62 +21,78 @@ import ValorantLayout from "../../../layouts/ValorantLayout.astro";
     <!-- seperator -->
     <div class="my-10"></div>
     <!-- services available -->
-    <div>
-      <ul class="flex flex-row gap-x-5 justify-center items-center">
-        <li>By Rank</li>
-        <li>By Per Win</li>
-        <li>Agent Request</li>
-        <li>Time scheduling</li>
-        <li>Express Order</li>
-      </ul>
-      <!-- seperator -->
-      <div class="my-10"></div>
-      <!-- Info Section -->
-      <div>Rank Boosting is by rank</div>
-      <img src="https://placehold.co/600x600" />
-      <a href="#">Contact Us Now!</a>
-      <!-- seperator -->
-      <div class="my-10"></div>
-      <!-- QnA -->
-      <div>
-        <h2 class="text-4xl">Frequently Asked Questions</h2>
-        <ul>
-          <li>
-            <h3 class="text-2xl">Is this service safe?</h3>
-            <p>
-              Yes, we are a professional Valorant boosting service provider in
-              Malaysia. We have been in the business for years and have served
-              hundreds of customers.
-            </p>
-          </li>
-          <li>
-            <h3 class="text-2xl">
-              How long does it take to complete the order?
-            </h3>
-            <p>
-              It depends on the order type and the current order queue. We will
-              provide an estimated time of completion once the order is placed.
-            </p>
-          </li>
-          <li>
-            <h3 class="text-2xl">Can I play with the booster?</h3>
-            <p>
-              Yes, you can play with the booster if you choose the duo queue
-              option. We also provide a time scheduling option for you to play
-              with the booster at your preferred time.
-            </p>
-          </li>
-          <li>
-            <h3 class="text-2xl">What if I have more questions?</h3>
-            <p>
-              You can contact us via WhatsApp, email, or live chat. Our customer
-              service team will be happy to assist you.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- seperator -->
-    <div class="my-10"></div>
+    <ServiceOptionSection client:load transition:persist />
   </main>
+  <!-- seperator -->
+  <div class="my-10"></div>
+  <!-- Extra Add On -->
+  <section class="mx-10">
+    <div class="flex justify-center items-center">
+      <h1
+        class="text-2xl bg-red-500 px-5 py-2 rounded-xl mb-5 font-bold text-shadow"
+      >
+        Add On
+      </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5">
+      <ServiceCard
+        title="Time Scheduling"
+        imgHref="https://placehold.co/400x400"
+        link="#"
+        description={[
+          "schedule booster time to logon/logoff",
+          "to fit your playtime",
+          "Cost : FREE",
+        ]}
+      />
+      <ServiceCard
+        title="Express Order"
+        imgHref="https://placehold.co/400x400"
+        link="#"
+        description={[
+          "prioritize and put a deadline on your order",
+          "Cost : 1.2x - 2x total ",
+          "( depends on deadline )",
+        ]}
+      />
+      <ServiceCard
+        title="Agent Request"
+        imgHref="https://placehold.co/400x400"
+        link="#"
+        description={[
+          "Request a specific agent to play",
+          "Cost : RM 5 - RM 10 ",
+          "( depends on agent )",
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- seperator -->
+  <div class="my-10"></div>
+  <!-- QnA -->
+  <div>
+    <h2 class="text-4xl ml-5 mb-5">Frequently Asked Questions</h2>
+    <div class="flex flex-col justify-center items-center gap-y-5 mx-10">
+      <QnABar
+        question="Is this service safe?"
+        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+      />
+
+      <QnABar
+        question="Is this service safe?"
+        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+      />
+
+      <QnABar
+        question="Is this service safe?"
+        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+      />
+
+      <QnABar
+        question="Is this service safe?"
+        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+      />
+    </div>
+  </div>
 </ValorantLayout>

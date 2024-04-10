@@ -1,6 +1,7 @@
 ---
 import GoUpBtn from "../components/GoUpBtn.astro";
-
+import ContactIcon from "../components/services/valorant/ContactIcon.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 interface Props {
   title: string;
 }
@@ -63,6 +64,8 @@ const currentYear = new Date().getFullYear();
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+    <!-- View transition -->
+    <!-- <ViewTransitions /> -->
     <title>{title}</title>
   </head>
   <body class="bg-gray-900 text-white scroll-smooth">
@@ -81,29 +84,65 @@ const currentYear = new Date().getFullYear();
       </div>
     </nav>
     <slot />
-    <GoUpBtn />
+    <!-- seperator -->
+    <div class="my-5"></div>
+    <!-- contact section -->
+    <section class="bg-gray-900" id="cta">
+      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
+        >
+          Contact Us
+        </h2>
+        <!-- putting my contacts icon here -->
+        <p class="text-lg md:text-xl text-center mb-8 text-white">
+          Ready to take your Valorant game to the next level? Get in touch with
+          us today!
+        </p>
+        <div
+          id="icon-box"
+          class="flex flex-col gap-x-5 md:flex-row justify-center items-center"
+        >
+          <!-- icon pasted here -->
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- seperator -->
+    <div class="my-5"></div>
     <footer class="flex text-center justify-center items-center">
       <div class="text-gray-500">
         &copy; {currentYear} Tomato Wilbur Yap. All rights reserved.
       </div>
     </footer>
+    <GoUpBtn />
+    <style is:global>
+      .valo-font {
+        font-family: "VALORANT", sans-serif;
+      }
+
+      body {
+        font-family: "Dosis", "Roboto", sans-serif;
+      }
+
+      :root {
+        --v-red: #ff4655;
+        --v-white: #ece8e1;
+        --v-black: #0f1923;
+        --v-outline: rgba(236, 232, 225, 0.5);
+      }
+    </style>
+    <script></script>
   </body>
-  <style is:global>
-    .valo-font {
-      font-family: "VALORANT", sans-serif;
-    }
-
-    body {
-      font-family: "Dosis", "Roboto", sans-serif;
-    }
-
-    :root {
-      --v-red: #ff4655;
-      --v-white: #ece8e1;
-      --v-black: #0f1923;
-      --v-outline: rgba(236, 232, 225, 0.5);
-    }
-  </style>
 </html>
-
-<script></script>

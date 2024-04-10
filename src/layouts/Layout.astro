@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
 }
@@ -53,6 +54,8 @@ const currentYear = new Date().getFullYear();
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+    <!-- View transition -->
+    <ViewTransitions />
     <title>{title}</title>
   </head>
   <body>
@@ -64,51 +67,49 @@ const currentYear = new Date().getFullYear();
         <a href="/about-me">Tomato Wilbur Yap.</a> All rights reserved.
       </p>
     </footer>
-  </body>
-  <style is:global>
-    :root {
-      --accent: 136, 58, 234;
-      --accent-light: 224, 204, 250;
-      --accent-dark: 49, 10, 101;
-      --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-      );
-    }
-    * {
-      font-family: "Source Code Pro", "Roboto", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <style is:global>
+      :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      * {
+        font-family: "Source Code Pro", "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-    html {
-      /* dark mode */
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-    }
+      html {
+        /* dark mode */
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
 
-    code {
-      font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
-    }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
 
-    .footer {
-      bottom: 0;
-      text-align: center;
-      padding: 1rem;
-      /* grey color copyright text */
-      color: #d0d0d0;
-    }
-  </style>
+      .footer {
+        bottom: 0;
+        text-align: center;
+        padding: 1rem;
+        /* grey color copyright text */
+        color: #d0d0d0;
+      }
+    </style>
+  </body><script></script>
 </html>
-
-<script></script>
