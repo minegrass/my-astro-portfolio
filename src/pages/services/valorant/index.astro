@@ -1,0 +1,189 @@
+---
+import ValorantLayout from "../../../layouts/ValorantLayout.astro";
+import ValoBtn from "../../../components/services/valorant/ValoBtn.astro";
+import ServiceCard from "../../../components/services/valorant/ServiceCard.astro";
+import ReviewCard from "../../../components/services/valorant/ReviewCard.astro";
+import ContactIcon from "../../../components/services/valorant/ContactIcon.astro";
+---
+
+<ValorantLayout
+  title="Tom Valorant Services Malaysia - More Services Available"
+>
+  <main>
+    <!-- transparent navigation bar with right side writing TOM -->
+
+    <section class="bg-gray-900 relative">
+      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24 py-24">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2">
+            <img
+              src="https://via.placeholder.com/600x400"
+              alt="Valorant gameplay scene"
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+            <h1
+              class="text-8xl md:text-5xl lg:text-6xl font-bold mb-4 text-white valo-font"
+            >
+              Tom Valorant Boosting
+            </h1>
+            <p class="text-lg md:text-xl mb-8 text-white">
+              You know its fucked, when only you can make the cluth...
+            </p>
+            <!-- make the valorant button at here -->
+            <ValoBtn />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-red-700 py-24" id="top-banner">
+      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+        <h1
+          class="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-center text-white bg-clip-text bg-gradient-to-r from-red-500 to-orange-500"
+        >
+          Escape From Trash Teammate NOW
+        </h1>
+      </div>
+    </section>
+    <section class="bg-gray-900 py-24" id="features">
+      <div class="mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
+        >
+          Our Services
+        </h2>
+        <div>
+          <ul class="flex flex-row gap-x-5 justify-center items-center">
+            <li>Rank Boosting</li>
+            <li>Per Win</li>
+            <li>Level Boosting</li>
+            <li>Battlepass Boosting</li>
+          </ul>
+          <!-- price and service info page -->
+        </div>
+        <div
+          id="services-box"
+          class="flex flex-row justify-center items-center"
+        >
+          <!-- services paste here -->
+
+          <ServiceCard
+            title="Rank Boosting"
+            imgHref="/services/valorant/rankup.png"
+            description="Improve your rank and compete with the best players."
+          />
+          <ServiceCard
+            title="Rank Boosting"
+            imgHref="/services/valorant/rankup.png"
+            description="Improve your rank and compete with the best players."
+          /><ServiceCard
+            title="Rank Boosting"
+            imgHref="/services/valorant/rankup.png"
+            description="Improve your rank and compete with the best players."
+          /><ServiceCard
+            title="Rank Boosting"
+            imgHref="/services/valorant/rankup.png"
+            description="Improve your rank and compete with the best players."
+          />
+        </div>
+      </div>
+    </section>
+    <!-- make a "Who Are We" Section -->
+    <section class="bg-gray-900 py-24" id="about">
+      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
+        >
+          Who Are We
+        </h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2">
+            <img
+              src="/services/valorant/whoarewe.jpeg"
+              alt="Valorant gameplay scene"
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+            <p class="text-lg md:text-xl mb-8 text-white">
+              We are a team of professional Valorant players who have been
+              playing the game since the beta. We have achieved the highest
+              ranks in the game and have been competing in various tournaments
+              and leagues. We have been providing boosting services for over 3
+              years and have helped thousands of players achieve their desired
+              ranks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-900 py-24" id="testimonials">
+      <div class="max-w-screen-lg mx-auto px-4 py-16 container">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white valo-font"
+        >
+          Top Careers
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="testi-box"
+        >
+          <!-- testi card here -->
+          <ReviewCard
+            caption="Radiant order finished in Jan-2024"
+            img="/services/valorant/rad1.jpg"
+            href="#"
+          />
+          <ReviewCard
+            caption="Radiant order finished in Jan-2024"
+            img="/services/valorant/rad1.jpg"
+            href="#"
+          />
+          <ReviewCard
+            caption="Radiant order finished in Jan-2024"
+            img="/services/valorant/rad1.jpg"
+            href="#"
+          />
+          <ReviewCard
+            caption="Radiant order finished in Jan-2024"
+            img="/services/valorant/rad1.jpg"
+            href="#"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-900 py-24" id="cta">
+      <div class="container mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-center text-white"
+        >
+          Contact Us
+        </h2>
+        <!-- putting my contacts icon here -->
+        <p class="text-lg md:text-xl text-center mb-8 text-white">
+          Ready to take your Valorant game to the next level? Get in touch with
+          us today!
+        </p>
+        <div
+          id="icon-box"
+          class="flex flex-col gap-x-5 md:flex-row justify-center items-center"
+        >
+          <!-- icon pasted here -->
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+          <ContactIcon
+            href="https://www.shopee.com.my"
+            img="/services/valorant/svg/shopee-icon.svg"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</ValorantLayout>

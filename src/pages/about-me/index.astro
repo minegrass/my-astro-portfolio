@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FlipCard from "../../components/FlipCard.astro";
+import ProfileLink from "../../components/ProfileLink.astro";
+import GoUpBtn from "../../components/GoUpBtn.astro";
+---
+
+<Layout title="Tomato Wilbur Yap: Only Page">
+  <main>
+    <div class="flip-card-div">
+      <FlipCard />
+    </div>
+    <div class="life-div">
+      <h2>Life Journey</h2>
+      <p>Still young and nothing...</p>
+    </div>
+    <div>
+      <ProfileLink />
+    </div>
+    <GoUpBtn />
+  </main>
+</Layout>
+
+<style>
+  .life-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+  }
+
+  .flip-card-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
+</style>

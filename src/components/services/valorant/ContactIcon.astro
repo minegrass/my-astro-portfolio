@@ -1,0 +1,16 @@
+---
+interface Props {
+  img: string;
+  href: string;
+}
+
+const { img, href } = Astro.props;
+---
+
+<a href={href}>
+  <div
+    class="bg-white p-6 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+  >
+    <img src={img} />
+  </div>
+</a>

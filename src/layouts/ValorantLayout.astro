@@ -1,4 +1,6 @@
 ---
+import GoUpBtn from "../components/GoUpBtn.astro";
+
 interface Props {
   title: string;
 }
@@ -15,7 +17,7 @@ const currentYear = new Date().getFullYear();
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <!-- Primary Meta Tags -->
-    <title>Tomato Wilbur Yap</title>
+    <title>{title}</title>
     <meta name="title" content="Tomato Wilbur Yap" />
     <meta
       name="description"
@@ -47,66 +49,59 @@ const currentYear = new Date().getFullYear();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="English" />
     <meta name="author" content="Tomato Wilbur Yap" />
+    <!-- icons and fonts -->
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500"
       rel="stylesheet"
     />
+    <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-gray-900 text-white scroll-smooth">
+    <nav class="bg-gray-900 p-6">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="../valorant" class="text-2xl font-bold valo-font"> TOM </a>
+        <div class="flex items-center">
+          <a href="#features" class="mr-4 tracking-wider">Services</a>
+          <a href="#testimonials" class="mr-4 tracking-wider">Testimonials</a>
+          <a
+            href="#cta"
+            class="bg-red-600 hover:tracking-wider hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg mr-4 ease-in-out transition-all duration-300 hover:shadow-lg hover:scale-105 transform"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
     <slot />
-    <footer class="footer">
-      <!-- copyright -->
-      <p>
-        &copy; {currentYear}
-        <a href="/about-me">Tomato Wilbur Yap.</a> All rights reserved.
-      </p>
+    <GoUpBtn />
+    <footer class="flex text-center justify-center items-center">
+      <div class="text-gray-500">
+        &copy; {currentYear} Tomato Wilbur Yap. All rights reserved.
+      </div>
     </footer>
   </body>
   <style is:global>
+    .valo-font {
+      font-family: "VALORANT", sans-serif;
+    }
+
+    body {
+      font-family: "Dosis", "Roboto", sans-serif;
+    }
+
     :root {
-      --accent: 136, 58, 234;
-      --accent-light: 224, 204, 250;
-      --accent-dark: 49, 10, 101;
-      --accent-gradient: linear-gradient(
-        45deg,
-        rgb(var(--accent)),
-        rgb(var(--accent-light)) 30%,
-        white 60%
-      );
-    }
-    * {
-      font-family: "Source Code Pro", "Roboto", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      /* dark mode */
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-    }
-
-    code {
-      font-family:
-        Menlo,
-        Monaco,
-        Lucida Console,
-        Liberation Mono,
-        DejaVu Sans Mono,
-        Bitstream Vera Sans Mono,
-        Courier New,
-        monospace;
-    }
-
-    .footer {
-      bottom: 0;
-      text-align: center;
-      padding: 1rem;
-      /* grey color copyright text */
-      color: #d0d0d0;
+      --v-red: #ff4655;
+      --v-white: #ece8e1;
+      --v-black: #0f1923;
+      --v-outline: rgba(236, 232, 225, 0.5);
     }
   </style>
 </html>
