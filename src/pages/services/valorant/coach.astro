@@ -1,0 +1,104 @@
+---
+import ValorantLayout from "../../../layouts/ValorantLayout.astro";
+import ServiceOptionSection from "../../../components/services/valorant/ServiceOptionSection.jsx";
+import ServiceCard from "../../../components/services/valorant/ServiceCard.astro";
+import QnABar from "../../../components/services/valorant/QnABar.astro";
+---
+
+<ValorantLayout title="Tom Valorant Boosting Service Malaysia">
+    <main>
+        <!-- top banner -->
+        <div class="font-bold">
+            <div
+                class="justify-center flex flex-col items-center bg-red-500 py-10 text-shadow-normal"
+            >
+                <h1 class="text-8xl">
+                    <span class="valo-font">Tom</span> Valorant Coaching
+                </h1>
+                <h2 class="text-3xl">
+                    Help you to get the skills needed and ready to achieve your
+                    desired rank by yourself.
+                </h2>
+            </div>
+        </div>
+        <!-- seperator -->
+        <div class="my-10"></div>
+        <!-- Coach Introduction -->
+        <!-- Price  -->
+    </main>
+    <!-- seperator -->
+    <div class="my-10"></div>
+    <!-- Extra Add On -->
+    <section class="mx-10">
+        <div class="flex justify-center items-center">
+            <h1
+                class="text-2xl bg-red-500 px-5 py-2 rounded-xl mb-5 font-bold text-shadow"
+            >
+                Pricing
+            </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-5">
+            <ServiceCard
+                title="Live Coaching"
+                imgHref="https://placehold.co/400x400"
+                link="#"
+                description={[
+                    "Discord Live Coaching",
+                    "Cost : RM 20 / hour",
+                    "Bought in package will get a discount",
+                ]}
+            />
+            <ServiceCard
+                title="Video Review"
+                imgHref="https://placehold.co/400x400"
+                link="#"
+                description={[
+                    "Review your recorded gameplay and give comment",
+                    "Cost : RM 10 / comp game",
+                ]}
+            />
+            <ServiceCard
+                title="Full Team Coaching"
+                imgHref="https://placehold.co/400x400"
+                link="#"
+                description={[
+                    "Focusing On your whole team gameplay and strategies",
+                    "Suitable for competition team",
+                    "Contact for more info ",
+                ]}
+            />
+        </div>
+    </section>
+
+    <!-- seperator -->
+    <div class="my-10"></div>
+    <!-- QnA -->
+    <div>
+        <h2 class="text-4xl ml-5 mb-5">Frequently Asked Questions</h2>
+        <div class="flex flex-col gap-y-5 mx-10">
+            <QnABar
+                id="one"
+                question="Is this service safe?"
+                answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+            />
+
+            <QnABar
+                id="two"
+                question="Is this service safe?"
+                answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+            />
+
+            <QnABar
+                id="three"
+                question="Is this service safe?"
+                answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+            />
+
+            <QnABar
+                id="four"
+                question="Is this service safe?"
+                answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+            />
+        </div>
+    </div>
+</ValorantLayout>
