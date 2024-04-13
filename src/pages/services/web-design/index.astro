@@ -1,0 +1,115 @@
+---
+import WebDesignLayout from "../../../layouts/WebDesignLayout.astro";
+import PriceCard from "../../../components/services/web-design/PriceCard.tsx";
+import QnABar from "../../../components/services/web-design/QnABar.tsx";
+import ServiceCard from "../../../components/services/web-design/ServiceCard.tsx";
+import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScreen.tsx";
+---
+
+<WebDesignLayout title="Cheap Website Design Malaysia Start from RM500">
+    <!-- Hero section -->
+    <section id="hero-section" class="p-5 h-[500px]">
+        <div
+            class="flex flex-col md:flex-row-reverse items-center justify-center h-full text-center"
+        >
+            <div>
+                <ShowcaseScreen client:load client:only />
+            </div>
+            <div class="md:w-2/3">
+                <h1 class="text-xl lg:text-4xl font-bold text-gray-900">
+                    Website Design Start from <span
+                        class="text-web-primary-dark">RM500</span
+                    >
+                </h1>
+
+                <p class="text-gray-700">
+                    We provide cheap website design services in Malaysia. Our
+                    website design price that included everything starts from
+                    RM500
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing section -->
+    <section id="pricing-section" class="flex flex-col">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
+            Our Website Design Price
+        </h2>
+
+        <div
+            class="grid grid-cols-1 md:flex justify-center items-center h-full cut-off-bg"
+        >
+            <!-- showcase mimic -->
+            <div class="place-content-center p-12 hidden lg:grid">
+                <div class="md:h-[18vw] md:w-[30vw] w-[36vw] h-[50vw]"></div>
+            </div>
+            <PriceCard title="Landing Page" price={499} client:load />
+            <PriceCard title="Business Website" price={1499} client:load />
+            <PriceCard title="Premium Website" price={2499} client:load />
+        </div>
+    </section>
+    <!-- Services introudction -->
+    <section>
+        <div class="grid md:grid-cols-2 gap-y-5">
+            <ServiceCard
+                title="Free 1st year utility renewal"
+                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
+                icon="https://placehold.co/400"
+            />
+            <ServiceCard
+                title="Free 1st year utility renewal"
+                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
+                icon="https://placehold.co/400"
+            />
+            <ServiceCard
+                title="Free 1st year utility renewal"
+                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
+                icon="https://placehold.co/400"
+            />
+            <ServiceCard
+                title="Free 1st year utility renewal"
+                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
+                icon="https://placehold.co/400"
+            />
+        </div>
+    </section>
+    <!-- QnA -->
+    <section>
+        <div class="flex flex-col mx-10 gap-y-3">
+            <h1 class="text-2xl font-bold text-copy">Questions?</h1>
+            <QnABar question="Hello" answer="Not a good bye baby" id="1" />
+            <QnABar question="Hello" answer="Not a good bye baby" id="2" />
+            <QnABar question="Hello" answer="Not a good bye baby" id="3" />
+            <QnABar question="Hello" answer="Not a good bye baby" id="4" />
+            <QnABar question="Hello" answer="Not a good bye baby" id="5" />
+        </div>
+    </section>
+    <!-- Portfolio? -->
+    <!-- Contact  -->
+    <section>
+        <div class="flex justify-center items-center flex-col">
+            <h1 class="text-3xl font-bold text-web-copy">
+                Contact Us Now On Whatsapp
+            </h1>
+            <img
+                class="w-[50px] h-[50px] rounded-full"
+                src="https://placehold.co/400"
+            />
+        </div>
+    </section>
+</WebDesignLayout>
+
+<style>
+    .cut-off-bg {
+        background: linear-gradient(90deg, #ffdd33 50%, #f2f1ed 50%);
+    }
+    @media only screen and (min-width: 768px) {
+        .cut-off-bg {
+            background: linear-gradient(180deg, #ffdd33 50%, #f2f1ed 50%);
+        }
+    }
+</style>
+
+<script>
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+</script>

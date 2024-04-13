@@ -1,0 +1,109 @@
+---
+import { ViewTransitions } from "astro:transitions";
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en" class="bg-web-background text-web-copy">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <!-- Primary Meta Tags -->
+        <title>{title}</title>
+        <meta name="title" content="Tomato Wilbur Yap" />
+        <meta
+            name="description"
+            content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="Tomato Wilbur Yap" />
+        <meta
+            property="og:description"
+            content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+        />
+        <meta property="og:image" content="seo-image-link" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="" />
+        <meta property="twitter:title" content="Tomato Wilbur Yap" />
+        <meta
+            property="twitter:description"
+            content="Tomato Wilbur Yap, An Online Identity that messing in the online world. Not sure you get here, but here is all about him."
+        />
+        <meta property="twitter:image" content="seo-image-link" />
+
+        <meta
+            name="keywords"
+            content="Tomato Wilbur Yap, Tomato Yap, Wilbur Yap"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="author" content="Tomato Wilbur Yap" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="generator" content={Astro.generator} />
+        <!-- View transition -->
+        <ViewTransitions />
+        <title>{title}</title>
+    </head>
+    <body>
+        <nav class="flex justify-center items-center bg-web-primary shadow-md">
+            <div class="flex flex-row justify-around items-center gap-x-2 py-2">
+                <p>Portfolio</p>
+                <p class="">Pricing</p>
+                <a>
+                    <h1 class="text-web-primary-content text-xl font-bold">
+                        TOM
+                    </h1></a
+                >
+                <p>Services</p>
+                <p>QnA</p>
+            </div>
+        </nav>
+
+        <slot />
+        <footer class="text-center text-web-copy-lighter">
+            <!-- copyright -->
+            <p>
+                &copy; {currentYear}
+                <a href="/about-me">Tomato Wilbur Yap.</a> All rights reserved.
+            </p>
+        </footer>
+        <style is:global>
+            :root {
+                --accent: 136, 58, 234;
+                --accent-light: 224, 204, 250;
+                --accent-dark: 49, 10, 101;
+                --accent-gradient: linear-gradient(
+                    45deg,
+                    rgb(var(--accent)),
+                    rgb(var(--accent-light)) 30%,
+                    white 60%
+                );
+            }
+            * {
+                font-family: "Source Code Pro", "Roboto", sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </body>
+</html>
