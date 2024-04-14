@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  price: number;
+  features: string[];
+}
+
+const { title, price, features } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row drop-shadow-lg swipe-in-animation">
+  <div
+    class="flex flex-col items-center justify-center px-3 bg-web-foreground backdrop-blur-sm bg-opacity-60 rounded-t-xl md:rounded-tr-none md:rounded-l-xl md:w-1/4"
+  >
+    <h1 class="text-center">{title}</h1>
+
+    <p>RM {price}</p>
+    <a
+      href="./price"
+      class="bg-web-secondary text-web-secondary-content rounded-xl font-bold hover:bg-web-secondary-light transition-all ease-out px-2 py-1"
+    >
+      Details</a
+    >
+  </div>
+  <div
+    class="p-2 bg-web-background bg-opacity-50 backdrop-blur-sm flex justify-center items-center flex-col rounded-b-xl md:rounded-bl-none md:rounded-r-xl"
+  >
+    <h2 class="text-center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae sed
+      corporis blanditiis tenetur doloremque, quasi quos harum adipisci ipsa
+      laborum ipsam natus ab optio?
+    </h2>
+    <ul
+      class="grid
+    md:grid-rows-2
+    md:grid-flow-cols
+    md:grid-cols-2
+    grid-rows-2
+    grid-flow-rows
+  
+    gap-x-2
+    text-copy-light
+    place-content-center
+    p-3"
+    >
+      {features.map((feature) => <li>{feature}</li>)}
+    </ul>
+  </div>
+</div>
+
+<script>
+  import gsap from "gsap";
+  gsap.from(".swipe-in-animation", {
+    scrollTrigger: {
+      trigger: "#price-section",
+      start: "top center",
+      end: "center center",
+      scrub: true,
+    },
+    x: 200,
+    opacity: 0,
+
+    stagger: 0.5,
+  });
+</script>

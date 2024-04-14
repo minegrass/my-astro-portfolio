@@ -3,17 +3,8 @@ import { useEffect, useState } from "react";
 import { inView } from "framer-motion/dom";
 import React from "react";
 
-const textVariants = [
-  "Hello",
-  "Contact",
-  "Services",
-  "About",
-  "Projects",
-  "Blog",
-  "Contact",
-];
-
 const Example = () => {
+
   
   return (
     <motion.div className="relative">
@@ -58,7 +49,7 @@ const FloatingPhone = () => {
 
 const Screen = ({children}:{children:any}) => {
   return (
-    <div className="relative z-0 grid h-full w-full p-5 overflow-hidden bg-web-foreground">
+    <div className="relative z-0 grid h-full w-full place-content-center overflow-hidden bg-web-foreground">
       {/* Example logo from logoispum */}
       {children}
     </div>
@@ -78,41 +69,15 @@ const HeaderBar = () => {
 
 
   const GeneralScreen = () => {
-    return(<div className="flex flex-col">
-      <nav className="hidden md:block bg-web-primary-dark rounded-xl p-1">
-        <div className="flex flex-row text-xs justify-around items-center text-web-primary-content">
-            <div className="bg-web-primary-light px-2 rounded-full">
-              <a href="#">Home</a>
-            </div>
-            <div className="bg-web-primary-light px-2 rounded-full">
-              <a href="#">Price</a>
-            </div>
-            <div className="bg-web-primary-light px-2 rounded-full">
-              <a href="#">Services</a>
-            </div>
-        </div>
-      </nav>
-      <div className="text-left h-full">
-        Recent News:
-        <div className="h-[90%] flex-col flex justify-center items-center bg-gray-200 text-center text-xs lg:text-lg">
-          <h1>RM500 only to launch a website</h1>
-          <a href="#" className="text-web-secondary">Try Now</a>
-        </div>
-        </div>
+    return(<div className="flex flex-col items-center gap-y-3">
+      <h1>Contact us now!</h1>
+      <a href="#">
+        <img className="w-[50px] h-[50px] rounded-full" src="https://placehold.co/400"/>
+      </a>
     </div>
   
   
   
   )};
-
-  const ContactScreen = () => {
-    return(<div>
-      <h1>Contact</h1>
-      <a href="#">Contact We Now</a>
-    </div>
-  
-  
-  
-  )}
 
 export default Example;

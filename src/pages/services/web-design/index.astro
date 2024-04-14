@@ -1,9 +1,11 @@
 ---
 import WebDesignLayout from "../../../layouts/WebDesignLayout.astro";
-import PriceCard from "../../../components/services/web-design/PriceCard.tsx";
-import QnABar from "../../../components/services/web-design/QnABar.tsx";
-import ServiceCard from "../../../components/services/web-design/ServiceCard.tsx";
-import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScreen.tsx";
+import PriceCard from "../../../components/services/web-design/PriceCard.astro";
+import QnABar from "../../../components/services/web-design/QnABar";
+import ServiceCard from "../../../components/services/web-design/ServiceCard";
+import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScreen";
+import ShowcaseScreenContact from "../../../components/services/web-design/ShowcaseScreenContact";
+import FeatureCard from "../../../components/services/web-design/FeatureCard.astro";
 ---
 
 <WebDesignLayout title="Cheap Website Design Malaysia Start from RM500">
@@ -12,8 +14,12 @@ import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScre
         <div
             class="flex flex-col md:flex-row-reverse items-center justify-center h-full text-center"
         >
-            <div>
-                <ShowcaseScreen client:load client:only />
+            <div class="relative" id="showcase-screen">
+                <ShowcaseScreen
+                    client:load
+                    transition:persist
+                    data-astro-rerun
+                />
             </div>
             <div class="md:w-2/3">
                 <h1 class="text-xl lg:text-4xl font-bold text-gray-900">
@@ -31,52 +37,74 @@ import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScre
         </div>
     </section>
     <!-- Pricing section -->
-    <section id="pricing-section" class="flex flex-col">
+    <section id="price-section" class="flex flex-col">
         <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">
             Our Website Design Price
         </h2>
 
         <div
-            class="grid grid-cols-1 md:flex justify-center items-center h-full cut-off-bg"
+            class="md:flex flex-row justify-center items-center grid grid-cols-1 h-full cut-off-bg"
         >
             <!-- showcase mimic -->
-            <div class="place-content-center p-12 hidden lg:grid">
+            <div
+                id="showcase-mimic"
+                class="place-content-center p-12 hidden lg:grid w-2/5"
+            >
                 <div class="md:h-[18vw] md:w-[30vw] w-[36vw] h-[50vw]"></div>
             </div>
-            <PriceCard title="Landing Page" price={499} client:load />
-            <PriceCard title="Business Website" price={1499} client:load />
-            <PriceCard title="Premium Website" price={2499} client:load />
+            <div class="flex flex-col mx-5 gap-y-2 py-3">
+                <PriceCard
+                    title="Landing Page"
+                    price={499}
+                    features={[
+                        "1 year SSL, domain, hosting",
+                        "Whatsapp Contact",
+                        "Google Map",
+                        "SEO optimization",
+                    ]}
+                />
+                <PriceCard
+                    title="Business Website"
+                    price={1499}
+                    features={[
+                        "1 year SSL, domain, hosting",
+                        "Whatsapp Contact",
+                        "Google Map",
+                        "Lorem Ipsum Dorem PolemDum",
+                    ]}
+                />
+                <PriceCard
+                    title="Premium Website"
+                    price={2499}
+                    features={[
+                        "1 year SSL, domain, hosting",
+                        "Whatsapp Contact",
+                        "Google Map",
+                        "Animation Crosshair Assistance",
+                    ]}
+                />
+            </div>
         </div>
     </section>
+    <!-- seperator -->
+    <div class="h-10"></div>
     <!-- Services introudction -->
-    <section>
-        <div class="grid md:grid-cols-2 gap-y-5">
-            <ServiceCard
-                title="Free 1st year utility renewal"
-                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
-                icon="https://placehold.co/400"
-            />
-            <ServiceCard
-                title="Free 1st year utility renewal"
-                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
-                icon="https://placehold.co/400"
-            />
-            <ServiceCard
-                title="Free 1st year utility renewal"
-                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
-                icon="https://placehold.co/400"
-            />
-            <ServiceCard
-                title="Free 1st year utility renewal"
-                description="Pay only RM462.00 (Pro) or RM562.00 (Premium) for yearly renewal for domain, web hosting, SSL and Web Security all in one package on the THIRD year!"
-                icon="https://placehold.co/400"
-            />
+    <section id="service-section">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 m-5 gap-y-5">
+            <FeatureCard />
+            <FeatureCard />
+            <FeatureCard />
+            <FeatureCard />
         </div>
     </section>
+    <!-- seperator -->
+    <div class="h-10"></div>
     <!-- QnA -->
     <section>
         <div class="flex flex-col mx-10 gap-y-3">
-            <h1 class="text-2xl font-bold text-copy">Questions?</h1>
+            <h1 class="text-2xl font-bold text-copy">
+                frequently asked question
+            </h1>
             <QnABar question="Hello" answer="Not a good bye baby" id="1" />
             <QnABar question="Hello" answer="Not a good bye baby" id="2" />
             <QnABar question="Hello" answer="Not a good bye baby" id="3" />
@@ -85,16 +113,20 @@ import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScre
         </div>
     </section>
     <!-- Portfolio? -->
+    <!-- seperator -->
+    <div class="h-10"></div>
     <!-- Contact  -->
-    <section>
-        <div class="flex justify-center items-center flex-col">
-            <h1 class="text-3xl font-bold text-web-copy">
-                Contact Us Now On Whatsapp
-            </h1>
-            <img
-                class="w-[50px] h-[50px] rounded-full"
-                src="https://placehold.co/400"
-            />
+    <section id="contact-section">
+        <div class="flex flex-row justify-center items-center m-5">
+            <div class="flex flex-col justfiy-center items-center">
+                <h1 class="md:text-3xl text-xl font-bold text-web-copy">
+                    Contact Us Now On Whatsapp
+                </h1>
+                <p class="text-md md:text-xl text-web-copy-light">
+                    More and more lorem ipsum small texti
+                </p>
+            </div>
+            <ShowcaseScreenContact client:load />
         </div>
     </section>
 </WebDesignLayout>
@@ -111,5 +143,49 @@ import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScre
 </style>
 
 <script>
+    import gsap from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    // cancel all scrolltrigger on mobile
+    gsap.matchMedia({
+        "(max-width: 768px)": () => {
+            ScrollTrigger.defaults({
+                toggleActions: "none none none none",
+            });
+        },
+    });
+    let showcaseScreen = document
+        .querySelector("#showcase-screen")
+        ?.getBoundingClientRect();
+    let showcaseScreenHeight = showcaseScreen?.top || 0;
+    let showcaseScreenWidth = showcaseScreen?.left || 0;
+    // get postion of mimic-showcase
+    let showcaseMimic = document
+        .querySelector("#showcase-mimic")
+        ?.getBoundingClientRect();
+    let showcaseMimicHeight = showcaseMimic?.top || 0;
+    let showcaseMimicWidth = showcaseMimic?.left || 0;
+    // get position of showcase-screen
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1024px)", () => {
+        gsap.fromTo(
+            "#showcase-screen",
+            {
+                x: 0,
+                y: 0,
+            },
+            {
+                x: showcaseMimicWidth - showcaseScreenWidth,
+                y: showcaseMimicHeight - showcaseScreenHeight,
+                scrollTrigger: {
+                    trigger: "#price-section",
+                    scrub: true,
+                    start: "top center",
+                    end: "center center",
+                },
+            },
+        );
+    });
 </script>
