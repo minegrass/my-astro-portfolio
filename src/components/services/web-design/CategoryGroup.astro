@@ -1,0 +1,19 @@
+---
+import AddOnCard from "./AddOnCard.astro";
+interface Props {
+    addOnArr: {
+        title: string;
+        desc: string;
+    }[];
+}
+
+const { addOnArr } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-x-5 gap-y-5">
+    {
+        addOnArr.map((item, index) => (
+            <AddOnCard title={item.title} desc={item.desc} />
+        ))
+    }
+</div>

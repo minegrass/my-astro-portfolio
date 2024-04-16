@@ -1,0 +1,25 @@
+---
+interface Props {
+    title: string;
+    desc: string;
+}
+
+const { title, desc } = Astro.props;
+---
+
+<div
+    class="flex flex-row gap-x-5 items-center bg-web-foreground p-5 rounded-xl drop-shadow-md overflow-hidden"
+>
+    <div>
+        <div class="w-[50px] h-[50px] bg-gray-200 rounded-full pop-animation">
+        </div>
+    </div>
+    <div class="flex flex-col">
+        <h1 class="font-bold text-xl pop-animation relative">{title}</h1>
+        <p class="text-web-copy-light text-sm pop-animation relative">
+            {desc}
+        </p>
+    </div>
+</div>
+
+<script></script>

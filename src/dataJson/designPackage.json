@@ -1,0 +1,31 @@
+
+[
+    {
+        "title":"Budget",
+        "desc":"For small teams or solopreneurs",
+        "oriPrice": 799,
+        "price": 499,
+        "renewal": 199,
+        "features": ["1 Pages", "1yr free renewal"],
+        "addOns": ["Free Whatsapp Bubble"]
+    },
+    {
+        "title":"Standard",
+        "desc":"For growing teams",
+        "oriPrice": 20,
+        "price": 10,
+        "renewal": 10,
+        "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
+        "addOns": ["All addons in Budget Package", "Additional Storage - $5", "Additional Bandwidth - $5"]
+    },
+    {
+        "title":"Premium",
+        "desc":"For large teams",
+        "oriPrice": 30,
+        "price": 15,
+        "renewal": 15,
+        "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
+        "addOns": ["All addons in Standard Package", "Contact Form", "5 Business Email"]
+    }
+]
+

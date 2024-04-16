@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/services/web-design/Navbar.astro";
+import ShowcaseScreenContact from "../components/services/web-design/ShowcaseScreenContact";
 interface Props {
     title: string;
 }
@@ -64,65 +65,22 @@ const currentYear = new Date().getFullYear();
         <title>{title}</title>
     </head>
     <body>
-        <nav class="">
-            <div class="grid grid-cols-3 p-5">
-                <div class="flex items-center">
-                    <div
-                        class="bg-web-primary-dark rounded-full flex-row flex sm:hidden"
-                    >
-                        <a
-                            class="p-3 drop-shadow-md rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="#"><p class="">💲</p></a
-                        >
-                    </div>
-                    <div
-                        class="bg-web-primary-dark rounded-full flex-row sm:flex hidden"
-                    >
-                        <a
-                            class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="./price"><p class="">Pricing</p></a
-                        >
-                        <a
-                            class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="#"><p class="">Services</p></a
-                        >
-                    </div>
-                </div>
-                <div class="flex justify-center items-center">
-                    <a href="./">
-                        <h1
-                            class="flex text-web-primary-content text-3xl font-extrabold"
-                        >
-                            TOM
-                        </h1>
-                    </a>
-                </div>
-                <div class="flex ml-auto items-center">
-                    <div
-                        class="bg-web-primary-dark rounded-full flex-row flex sm:hidden"
-                    >
-                        <a
-                            class="p-3 drop-shadow-md rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="#"><p class="">📞</p></a
-                        >
-                    </div>
-                    <div
-                        class="bg-web-primary-dark rounded-full flex-row sm:flex hidden"
-                    >
-                        <a
-                            class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="#"><p class="">FAQ</p></a
-                        >
-                        <a
-                            class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
-                            href="#"><p class="">Contact</p></a
-                        >
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <Navbar />
 
         <slot />
+        <section id="contact-section">
+            <div class="flex flex-row justify-center items-center m-5">
+                <div class="flex flex-col justfiy-center items-center">
+                    <h1 class="md:text-3xl text-xl font-bold text-web-copy">
+                        Contact Us Now On Whatsapp
+                    </h1>
+                    <p class="text-md md:text-xl text-web-copy-light">
+                        More and more lorem ipsum small texti
+                    </p>
+                </div>
+                <ShowcaseScreenContact client:load />
+            </div>
+        </section>
         <footer class="text-center text-web-copy-lighter">
             <!-- copyright -->
             <p>
@@ -131,6 +89,9 @@ const currentYear = new Date().getFullYear();
             </p>
         </footer>
         <style is:global>
+            html {
+                scroll-behavior: smooth;
+            }
             :root {
                 --accent: 136, 58, 234;
                 --accent-light: 224, 204, 250;

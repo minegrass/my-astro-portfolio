@@ -1,0 +1,59 @@
+
+{
+        "contact":[{
+            "title":"Whatsapp Contact button",
+            "desc":"Add a whatsapp contact button to your website"
+        },{
+            "title":"Facebook Live Chat Window",
+            "desc":"Add a facebook live chat window to your website"
+        },
+        {
+            "title":"Email Contact Form",
+            "desc":"Add an email contact form to your website"
+        },
+        {
+            "title":"Google Map Location",
+            "desc":"Add a google map location to your website"
+        }
+    
+    
+    ],
+
+    
+    
+        "website":[{
+            "title":"Special Domain Extension",
+            "desc":"special domain extension other than .com for your website (.studio , .info , .my)"
+        },
+        {
+            "title":"User Interface change website content (CMS)",
+            "desc":"Add a User Interface so you can edit your website content by yourself"
+        },
+        {
+            "title":"Animation website",
+            "desc":"Add animation element to your website"
+        },
+        {
+            "title":"Multiple language support",
+            "desc":"multiple language support for your website"
+        }]
+    ,
+    
+        "others":[{
+            "title":"Business Email",
+            "desc":"Get a business email for your website"
+        },
+        {
+            "title":"SSL encryption",
+            "desc":"Get a SSL encryption for your website"
+        },
+        {
+            "title":"SEO optimization",
+            "desc":"Get your website appears in search engine results"
+
+        }]
+
+    
+
+
+}

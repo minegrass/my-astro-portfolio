@@ -1,0 +1,102 @@
+---
+interface props {
+    title: string;
+    desc: string;
+    oriPrice: number;
+    price: number;
+    renewal: number;
+    features: string[];
+    addOns: string[];
+}
+
+const { title, desc, oriPrice, price, renewal, features, addOns } = Astro.props;
+---
+
+<div class="drop-shadow-md">
+    <div
+        class="border-2 border-web-border bg-web-foreground flex flex-col rounded-xl p-10 pb-6 drop-shadow-md"
+    >
+        <div class="">
+            <!-- title / desc -->
+            <div class="flex flex-row gap-x-4">
+                <div class="bg-gray-300 rounded-xl p-3">
+                    <div class="bg-gray-200 w-[50px] h-[50px]"></div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-2xl font-extrabold">{title}</h1>
+                    <p class="text-web-copy-light">
+                        {desc}
+                    </p>
+                </div>
+            </div>
+            <div class="w-full h-[1px] bg-web-border my-5"></div>
+            <!-- price -->
+            <div class="">
+                <div class="flex flex-row items-center">
+                    <h1
+                        class="text-lg line-through font-extrabold text-web-copy-lighter mr-1"
+                    >
+                        RM {oriPrice}
+                    </h1>
+                    <h1 class="text-3xl font-extrabold">RM {price}</h1>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-web-copy-light">
+                        Renewal: Rm {renewal} /yr
+                    </h1>
+                </div>
+            </div>
+            <h1 class="font-bold text-xl my-5">What's included</h1>
+            <!-- features list -->
+            <div>
+                <ul>
+                    {features.map((feature) => <li>{feature}</li>)}
+                </ul>
+                <!-- divider -->
+                <div class="flex flex-row items-center mx-2">
+                    <div class="w-full h-[1px] bg-red-500"></div>
+                    <h1 class="w-full text-center grow">Included Add On</h1>
+                    <div class="w-full h-[1px] bg-red-500"></div>
+                </div>
+                <!-- add on -->
+                <ul class="flex flex-col">
+                    {addOns.map((addOn) => <li>{addOn}</li>)}
+                </ul>
+            </div>
+            <a href="#" class="">
+                <div
+                    class="my-5 bg-web-secondary text-web-secondary-content justify-center items-center text-center rounded-xl p-2 hover:bg-web-secondary-light transition-all ease-in-out"
+                >
+                    <h1 class="text-xl font-bold">Purchase Now</h1>
+                </div>
+            </a>
+            <a href="#" class="text-center">
+                <div class="flex justify-center items-center">Add on?</div></a
+            >
+        </div>
+    </div>
+</div>
+
+<!-- <div class="flex justify-center items-center">
+        <ul
+            class="bg-web-foreground w-[90%] justify-center items-center border-2 rounded-b-xl text-center text-sm flex flex-col gap-y-2 text-web-copy-light"
+        >
+            <li>5 Pages Website</li>
+            <li>Mobile Responsive</li>
+            <li>SEO Friendly</li>
+            <li>Slider/Banner Design</li>
+            <li>Contact Form</li>
+            <li>Google Map Integration</li>
+            <li>Google Analytics Integration</li>
+            <li>Customer Registration</li>
+            <li>Auto Google Indexing</li>
+            <li>84X Faster LiteSpeed Technology</li>
+            <li>FREE 2 Year Domain Name</li>
+            <li>FREE 2 Year SSL (HTTPS)</li>
+            <li>FREE Unlimited Email</li>
+            <li>RM462.00 per year Renewal</li>
+            <li>Website Maintenance</li>
+            <li>Website Backup</li>
+            <li>Ready in 7 Days</li>
+        </ul>
+    </div> -->

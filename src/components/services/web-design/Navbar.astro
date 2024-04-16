@@ -1,0 +1,70 @@
+---
+
+---
+
+<nav id="navger" class="">
+    <div class="grid grid-cols-3 p-5">
+        <div class="flex items-center">
+            <div
+                class="bg-web-primary-dark rounded-full flex-row flex sm:hidden"
+            >
+                <a
+                    class="p-3 drop-shadow-md rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="#"><p class="">💲</p></a
+                >
+            </div>
+            <div
+                class="bg-web-primary-dark rounded-full flex-row sm:flex hidden"
+            >
+                <a
+                    class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="/services/web-design/price"><p class="">Pricing</p></a
+                >
+                <a
+                    class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="#"><p class="">Services</p></a
+                >
+            </div>
+        </div>
+        <div class="flex justify-center items-center">
+            <a href="./">
+                <h1
+                    class="flex text-web-primary-content text-3xl font-extrabold"
+                >
+                    TOM
+                </h1>
+            </a>
+        </div>
+        <div class="flex ml-auto items-center">
+            <div
+                class="bg-web-primary-dark rounded-full flex-row flex sm:hidden"
+            >
+                <a
+                    class="p-3 drop-shadow-md rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="#"><p class="">📞</p></a
+                >
+            </div>
+            <div
+                class="bg-web-primary-dark rounded-full flex-row sm:flex hidden"
+            >
+                <a
+                    class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="#"><p class="">FAQ</p></a
+                >
+                <a
+                    class="p-3 px-5 rounded-full bg-web-primary-dark text-web-primary-content font-bold hover:bg-web-secondary hover:text-web-secondary-content transition-all ease-in"
+                    href="#"><p class="">Contact</p></a
+                >
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    import gsap from "gsap";
+    gsap.from("#navger", {
+        y: -50,
+        opacity: 1,
+        duration: 1,
+    });
+</script>

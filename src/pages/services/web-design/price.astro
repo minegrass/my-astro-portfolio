@@ -1,15 +1,129 @@
 ---
+import PriceDetailCard from "../../../components/services/web-design/PriceDetailCard.astro";
 import WebDesignLayout from "../../../layouts/WebDesignLayout.astro";
+import pricingArr from "../../../dataJson/designPackage.json";
+import AddOnCard from "../../../components/services/web-design/AddOnCard.astro";
+import addOnJson from "../../../dataJson/addOn.json";
+import CategoryGroup from "../../../components/services/web-design/CategoryGroup.astro";
 ---
 
 <WebDesignLayout title="Cheap Website Design Malaysia Start from RM500">
-    <div>prices</div>
-    <!-- detail price card table-->
-    <details class="flex flex-row">
-        <summary class="list-none"> Preview </summary>
-        <p>SMall Shits</p>
-    </details>
-    <!-- renewal price -->
+    <!-- detail price card table && renewal price-->
+
+    <section>
+        <div
+            class="font-bold text-3xl flex justify-center items-center flex-col mb-10"
+        >
+            <h1>Pricing Package</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 mx-5 gap-x-10">
+            {
+                pricingArr.map((item, index) => (
+                    <PriceDetailCard
+                        key={index}
+                        title={item.title}
+                        desc={item.desc}
+                        oriPrice={item.oriPrice}
+                        renewal={item.renewal}
+                        price={item.price}
+                        description={item.desc}
+                        features={item.features}
+                        addOns={item.addOns}
+                    />
+                ))
+            }
+        </div>
+    </section>
+    <!-- seperator-->
+    <div class="my-10"></div>
+    <!-- Custom add on -->
+    <section>
+        <div>
+            <h1 class="text-3xl font-extrabold text-center">
+                Custom add on you can add
+            </h1>
+        </div>
+        <div class="flex flex-col items-start mx-10">
+            <div class="flex">
+                <div
+                    id="category-option-div"
+                    class="flex flex-row w-full my-5 font-bold bg-web-primary text-2xl rounded-full"
+                >
+                    <a
+                        class="px-3 py-2 bg-web-primary text-web-primary-content hover:bg-web-primary-light hover:cursor-pointer rounded-full"
+                        >Contact</a
+                    >
+                    <a
+                        class="px-3 py-2 bg-web-primary text-web-primary-content hover:bg-web-primary-light hover:cursor-pointer rounded-full"
+                        >Website</a
+                    >
+                    <a
+                        class="px-3 py-2 bg-web-primary text-web-primary-content hover:bg-web-primary-light hover:cursor-pointer rounded-full"
+                        >Others</a
+                    >
+                </div>
+            </div>
+            <div id="category-div" class="w-full h-full">
+                <div class="">
+                    <CategoryGroup addOnArr={addOnJson.contact} />
+                </div>
+                <div class="hidden">
+                    <CategoryGroup addOnArr={addOnJson.website} />
+                </div>
+                <div class="hidden">
+                    <CategoryGroup addOnArr={addOnJson.others} />
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- contact page -->
-    <!-- extra add on -->
+    <script>
+        import gsap from "gsap";
+        let categoryChoice = 0;
+        // target category-div
+        const categoryDiv = document.getElementById("category-div");
+        // get the child of category div
+        const categoryChild = categoryDiv?.children;
+        export function setCategory(num: number) {
+            categoryChoice = num;
+            updateCategory();
+        }
+        // get the category option div
+        const categoryOptionDiv = document.querySelectorAll(
+            "#category-option-div > a",
+        );
+        // add event listener to category option div
+        categoryOptionDiv.forEach((item, index) => {
+            item.addEventListener("click", () => {
+                setCategory(index);
+            });
+        });
+
+        function updateCategory() {
+            tl.restart();
+            if (!categoryChild) return;
+            for (let i = 0; i < categoryChild.length; i++) {
+                if (i === categoryChoice) {
+                    categoryChild[i].classList.remove("hidden");
+                } else {
+                    categoryChild[i].classList.add("hidden");
+                    // each of the categorychild.child
+                }
+            }
+        }
+
+        /* animation */
+        let tl = gsap.timeline().fromTo(
+            ".pop-animation",
+            {
+                y: 80,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out",
+            },
+        );
+    </script>
 </WebDesignLayout>
