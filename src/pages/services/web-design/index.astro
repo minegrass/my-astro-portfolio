@@ -6,6 +6,9 @@ import ServiceCard from "../../../components/services/web-design/ServiceCard";
 import ShowcaseScreen from "../../../components/services/web-design/ShowcaseScreen";
 import ShowcaseScreenContact from "../../../components/services/web-design/ShowcaseScreenContact";
 import FeatureCard from "../../../components/services/web-design/FeatureCard.astro";
+import qna from "../../../dataJson/qnaIndex.json";
+import features from "../../../dataJson/features.json";
+import desginPackageArr from "../../../dataJson/designPackage.json";
 ---
 
 <WebDesignLayout title="Cheap Website Design Malaysia Start from RM500">
@@ -23,15 +26,16 @@ import FeatureCard from "../../../components/services/web-design/FeatureCard.ast
             </div>
             <div class="md:w-2/3">
                 <h1 class="text-xl lg:text-4xl font-bold text-gray-900">
-                    Website Design Start from <span
+                    Cheap Website Design - Starting from <span
                         class="text-web-primary-dark">RM500</span
                     >
                 </h1>
 
                 <p class="text-gray-700">
-                    We provide cheap website design services in Malaysia. Our
-                    website design price that included everything starts from
-                    RM500
+                    Get a professionally designed website that reflects your
+                    brand and captivates your audience. Our affordable web
+                    design packages, starting from just RM500, include
+                    everything you need to establish your online presence.
                 </p>
             </div>
         </div>
@@ -52,64 +56,78 @@ import FeatureCard from "../../../components/services/web-design/FeatureCard.ast
             >
                 <div class="md:h-[18vw] md:w-[30vw] w-[36vw] h-[50vw]"></div>
             </div>
-            <div class="flex flex-col mx-5 gap-y-2 py-3">
-                <PriceCard
-                    title="Landing Page"
-                    price={499}
-                    features={[
-                        "1 year SSL, domain, hosting",
-                        "Whatsapp Contact",
-                        "Google Map",
-                        "SEO optimization",
-                    ]}
-                />
-                <PriceCard
-                    title="Business Website"
-                    price={1499}
-                    features={[
-                        "1 year SSL, domain, hosting",
-                        "Whatsapp Contact",
-                        "Google Map",
-                        "Lorem Ipsum Dorem PolemDum",
-                    ]}
-                />
-                <PriceCard
-                    title="Premium Website"
-                    price={2499}
-                    features={[
-                        "1 year SSL, domain, hosting",
-                        "Whatsapp Contact",
-                        "Google Map",
-                        "Animation Crosshair Assistance",
-                    ]}
-                />
+            <div class="flex flex-col mx-5 gap-y-2 py-3 w-3/5">
+                {
+                    desginPackageArr.map(
+                        ({ title, price, features, desc, oriPrice }, index) => {
+                            // get the infront 4 features from the features arr
+                            features = features.slice(0, 4);
+
+                            return (
+                                <PriceCard
+                                    oriPrice={oriPrice}
+                                    description={desc}
+                                    title={title}
+                                    price={price}
+                                    features={features}
+                                />
+                            );
+                        },
+                    )
+                }
             </div>
         </div>
     </section>
     <!-- seperator -->
-    <div class="h-10"></div>
+    <div class="h-[6rem]"></div>
     <!-- Services introudction -->
     <section id="service-section">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 m-5 gap-y-5">
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
-            <FeatureCard />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 mx-10">
+            {
+                features.map(({ title, description, iconHref }, index) => {
+                    // return a new div so every 2 featurecard is in a div
+                    if (index % 2 == 0) {
+                        return (
+                            <FeatureCard
+                                {title}
+                                {description}
+                                {iconHref}
+                                left={true}
+                            />
+                        );
+                    }
+                    return (
+                        <FeatureCard
+                            {title}
+                            {description}
+                            {iconHref}
+                            left={false}
+                        />
+                    );
+                })
+            }
         </div>
     </section>
     <!-- seperator -->
-    <div class="h-10"></div>
+    <div class="h-[5rem]"></div>
     <!-- QnA -->
     <section>
         <div class="flex flex-col mx-10 gap-y-3">
             <h1 class="text-2xl font-bold text-copy">
-                frequently asked question
+                Frequently Asked Question
             </h1>
-            <QnABar question="Hello" answer="Not a good bye baby" id="1" />
-            <QnABar question="Hello" answer="Not a good bye baby" id="2" />
-            <QnABar question="Hello" answer="Not a good bye baby" id="3" />
-            <QnABar question="Hello" answer="Not a good bye baby" id="4" />
-            <QnABar question="Hello" answer="Not a good bye baby" id="5" />
+
+            {
+                Object.entries(qna).map(([key, value], index) => {
+                    return (
+                        <QnABar
+                            question={key}
+                            answer={value}
+                            id={index.toString()}
+                        />
+                    );
+                })
+            }
         </div>
     </section>
     <!-- Portfolio? -->

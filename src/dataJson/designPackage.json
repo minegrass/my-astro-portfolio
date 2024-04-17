@@ -1,31 +1,34 @@
 
 [
     {
-        "title":"Budget",
-        "desc":"For small teams or solopreneurs",
+        "title":"Rahmah website",
+        "desc":"Simple info website for individuals or company",
         "oriPrice": 799,
         "price": 499,
         "renewal": 199,
         "features": ["1 Pages", "1yr free renewal"],
-        "addOns": ["Free Whatsapp Bubble"]
+        "addOns": ["Free Whatsapp Bubble"],
+        "iconHref":"money.svg"
     },
     {
-        "title":"Standard",
+        "title":"Standard website",
         "desc":"For growing teams",
         "oriPrice": 20,
         "price": 10,
         "renewal": 10,
         "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
-        "addOns": ["All addons in Budget Package", "Additional Storage - $5", "Additional Bandwidth - $5"]
+        "addOns": ["All addons in Budget Package", "Additional Storage - $5", "Additional Bandwidth - $5"],
+        "iconHref":"business-bag.svg"
     },
     {
-        "title":"Premium",
+        "title":"Premium website",
         "desc":"For large teams",
         "oriPrice": 30,
         "price": 15,
         "renewal": 15,
         "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
-        "addOns": ["All addons in Standard Package", "Contact Form", "5 Business Email"]
+        "addOns": ["All addons in Standard Package", "Contact Form", "5 Business Email"],
+        "iconHref":"diamond.svg"
     }
 ]
 

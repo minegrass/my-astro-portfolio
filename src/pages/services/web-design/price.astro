@@ -5,6 +5,8 @@ import pricingArr from "../../../dataJson/designPackage.json";
 import AddOnCard from "../../../components/services/web-design/AddOnCard.astro";
 import addOnJson from "../../../dataJson/addOn.json";
 import CategoryGroup from "../../../components/services/web-design/CategoryGroup.astro";
+import qna from "../../../dataJson/qnaPrice.json";
+import QnABar from "../../../components/services/web-design/QnABar";
 ---
 
 <WebDesignLayout title="Cheap Website Design Malaysia Start from RM500">
@@ -20,6 +22,7 @@ import CategoryGroup from "../../../components/services/web-design/CategoryGroup
             {
                 pricingArr.map((item, index) => (
                     <PriceDetailCard
+                        iconHref={item.iconHref}
                         key={index}
                         title={item.title}
                         desc={item.desc}
@@ -76,6 +79,28 @@ import CategoryGroup from "../../../components/services/web-design/CategoryGroup
             </div>
         </div>
     </section>
+    <div class="h-[5rem]"></div>
+    <!-- QnA -->
+    <section>
+        <div class="flex flex-col mx-10 gap-y-3">
+            <h1 class="text-2xl font-bold text-copy">
+                Frequently Asked Question
+            </h1>
+
+            {
+                Object.entries(qna).map(([key, value], index) => {
+                    return (
+                        <QnABar
+                            question={key}
+                            answer={value}
+                            id={index.toString()}
+                        />
+                    );
+                })
+            }
+        </div>
+    </section>
+
     <!-- contact page -->
     <script>
         import gsap from "gsap";

@@ -1,50 +1,43 @@
 ---
 interface Props {
   title: string;
+  description: string;
+  oriPrice: number;
   price: number;
   features: string[];
 }
 
-const { title, price, features } = Astro.props;
+const { title, description, price, features, oriPrice } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row drop-shadow-lg swipe-in-animation">
+  <!-- first section -->
   <div
-    class="flex flex-col items-center justify-center px-3 bg-web-foreground backdrop-blur-sm bg-opacity-60 rounded-t-xl md:rounded-tr-none md:rounded-l-xl md:w-1/4"
+    class="flex flex-col items-center justify-center p-3 bg-web-foreground backdrop-blur-sm bg-opacity-60 rounded-t-xl md:rounded-tr-none md:rounded-l-xl w-2/3"
   >
-    <h1 class="text-center">{title}</h1>
-
-    <p>RM {price}</p>
-    <a
-      href="./price"
-      class="bg-web-secondary text-web-secondary-content rounded-xl font-bold hover:bg-web-secondary-light transition-all ease-out px-2 py-1"
-    >
-      Details</a
-    >
+    <h1 class="text-xl font-bold">{title}</h1>
+    <p class="text-3xl font-extrabold">RM {price}</p>
+    <p class="line-through text-web-copy-lighter">RM {oriPrice}</p>
   </div>
+  <!-- middle -->
   <div
-    class="p-2 bg-web-background bg-opacity-50 backdrop-blur-sm flex justify-center items-center flex-col rounded-b-xl md:rounded-bl-none md:rounded-r-xl"
+    class="flex flex-col items-center justify-center p-3 bg-web-foreground backdrop-blur-sm bg-opacity-30 text-web-copy-light w-full"
   >
-    <h2 class="text-center">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id molestiae sed
-      corporis blanditiis tenetur doloremque, quasi quos harum adipisci ipsa
-      laborum ipsam natus ab optio?
-    </h2>
-    <ul
-      class="grid
-    md:grid-rows-2
-    md:grid-flow-cols
-    md:grid-cols-2
-    grid-rows-2
-    grid-flow-rows
-  
-    gap-x-2
-    text-copy-light
-    place-content-center
-    p-3"
-    >
+    <div>
+      <p>{description}</p>
+    </div>
+    <div class="list-none grid grid-cols-2 grid-rows-2">
       {features.map((feature) => <li>{feature}</li>)}
-    </ul>
+    </div>
+  </div>
+  <!-- back -->
+  <div
+    class="flex flex-col items-center justify-center p-3 bg-web-foreground backdrop-blur-sm bg-opacity-30 text-web-copy-light"
+  >
+    <a
+      class="bg-web-secondary text-web-secondary-content p-2 px-4 text-2xl font-bold rounded-full hover:bg-web-secondary-light"
+      href="./price">Details</a
+    >
   </div>
 </div>
 

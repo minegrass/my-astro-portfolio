@@ -1,20 +1,44 @@
 ---
+interface Props {
+    title: string;
+    description: string;
+    left: boolean;
+    iconHref: string;
+}
 
+const { title, description, left, iconHref } = Astro.props;
+const svgFilePath = "../../../../services/web-design/svg/";
+const svgFile = svgFilePath + iconHref;
 ---
 
-<div class="bg-web-foreground p-5 drop-shadow-lg rounded-xl">
-    <div class="flex flex-row justify-around items-center">
-        <div class="w-[25px] h-[25px] bg-gray-500 rounded-full">
-            <!-- <img src="#" /> -->
-        </div>
-        <div class="text-center w-1/2">
-            <h1 class="text-2xl font-bold">Lorem ipsum dolor sit.</h1>
+<div
+    class="bg-web-foreground p-5 drop-shadow-lg rounded-xl basis-full insert-animation"
+>
+    <div class="flex flex-row justify-around items-center h-full">
+        {left && <img src={svgFile} width="20%" height="20%" />}
+
+        <div class="w-1/2">
+            <h1 class="text-2xl font-bold mb-3">{title}</h1>
             <p class="text-web-copy-light text-sm lg:text-md">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Mollitia facere perspiciatis est, reprehenderit reiciendis hic,
-                distinctio voluptatem quos animi, culpa ratione dolorum expedita
-                beatae magnam.
+                {description}
             </p>
         </div>
+        {!left && <img src={svgFile} width="20%" height="20%" />}
     </div>
 </div>
+
+<script>
+    import gsap from "gsap";
+    let tl = gsap.timeline();
+    tl.from(".insert-animation", {
+        scrollTrigger: {
+            trigger: ".insert-animation",
+            start: "-200 center",
+            end: "bottom center",
+            scrub: 1,
+        },
+        x: -100,
+        opacity: 0,
+        stagger: 0.5,
+    });
+</script>

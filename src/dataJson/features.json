@@ -1,0 +1,22 @@
+[
+    {
+        "iconHref":"one.svg",
+        "title":"Hassle-Free Renewals",
+        "description":"Enjoy peace of mind with our all-inclusive renewal package. We take care of everything, from domain and hosting renewals to website maintenance, ensuring your website runs smoothly year after year."
+    },
+    {
+        "iconHref":"devices.svg",
+        "title":"Mobile-Responsive Design",
+        "description":"Reach your audience wherever they are. We create websites that adapt seamlessly to all devices - mobile, tablet, and desktop - providing an optimal user experience across platforms."
+    },
+    {
+        "iconHref":"money.svg",
+        "title":"Customizable Packages",
+        "description":"Tailor your website to your specific needs and budget. Our flexible pricing packages allow you to add or remove features as required, ensuring you only pay for what you need."
+    },
+    {
+        "iconHref":"support.svg",
+        "title":"Dedicated Support",
+        "description":"We're here for you even after your website launches. Our friendly support team is just a call away to assist with any questions or issues you may encounter."
+    }
+]

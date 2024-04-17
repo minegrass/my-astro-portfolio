@@ -70,12 +70,18 @@ const currentYear = new Date().getFullYear();
         <slot />
         <section id="contact-section">
             <div class="flex flex-row justify-center items-center m-5">
-                <div class="flex flex-col justfiy-center items-center">
-                    <h1 class="md:text-3xl text-xl font-bold text-web-copy">
-                        Contact Us Now On Whatsapp
+                <div class="flex flex-col justfiy-center items-center w-1/2">
+                    <h1
+                        class="md:text-3xl text-xl font-bold text-web-copy mb-3"
+                    >
+                        Let's Work Together!
                     </h1>
-                    <p class="text-md md:text-xl text-web-copy-light">
-                        More and more lorem ipsum small texti
+                    <p
+                        class="text-md md:text-xl text-web-copy-light text-center"
+                    >
+                        We're just a WhatsApp message away! Share your ideas and
+                        requirements, and let our friendly team guide you
+                        through the process.
                     </p>
                 </div>
                 <ShowcaseScreenContact client:load />
@@ -91,6 +97,7 @@ const currentYear = new Date().getFullYear();
         <style is:global>
             html {
                 scroll-behavior: smooth;
+                overflow-x: hidden;
             }
             :root {
                 --accent: 136, 58, 234;

@@ -1,6 +1,7 @@
 import { motion,useScroll,useMotionValueEvent,useSpring, MotionValue,useInView } from "framer-motion";
 import { useEffect, useState } from "react";
 import { inView } from "framer-motion/dom";
+import WhatsappSVG from "./WhatsappSvg"
 import React from "react";
 
 const Example = () => {
@@ -70,9 +71,9 @@ const HeaderBar = () => {
 
   const GeneralScreen = () => {
     return(<div className="flex flex-col items-center gap-y-3">
-      <h1>Contact us now!</h1>
-      <a href="#">
-        <img className="w-[50px] h-[50px] rounded-full" src="https://placehold.co/400"/>
+      <h1 className="font-bold text-3xl">Contact us now!</h1>
+      <a href="#" className="p-5 bg-gray-100 rounded-full drop-shadow-md hover:bg-gray-200 ease-in-out transition-all">
+        <WhatsappSVG width={50} height={50}/>
       </a>
     </div>
   
