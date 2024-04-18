@@ -68,6 +68,18 @@ const currentYear = new Date().getFullYear();
     <ViewTransitions />
     <title>{title}</title>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-09R411M0B3"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-09R411M0B3");
+  </script>
   <body class="bg-gray-900 text-white scroll-smooth">
     <nav class="bg-gray-900 p-6">
       <div class="container mx-auto flex justify-between items-center">
