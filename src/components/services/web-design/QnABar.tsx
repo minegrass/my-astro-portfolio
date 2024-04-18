@@ -11,7 +11,7 @@ export default function QnABar({question,answer,id}:props) {
 
 
   return (
-    <div className="border-2 border-web-border p-4 rounded-xl px-5">
+    <div className="border-2 border-web-border p-4 rounded-xl px-5 bg-web-foreground drop-shadow-md">
         
     <input type="checkbox" className='hidden peer' id={"collapse"+id}/>
     <a className='peer-checked:rotate-90 inline-block text-3xl'>➡️</a>

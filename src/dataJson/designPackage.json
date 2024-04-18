@@ -1,33 +1,33 @@
 
 [
     {
-        "title":"Rahmah website",
-        "desc":"Simple info website for individuals or company",
+        "title":"Rahmah Website ",
+        "desc":"Simple online presence for individuals and businesses.",
         "oriPrice": 799,
         "price": 499,
         "renewal": 199,
-        "features": ["1 Pages", "1yr free renewal"],
-        "addOns": ["Free Whatsapp Bubble"],
+        "features": ["1 Pages - 4 Sections", "1yr free .com domain","1yr free hosting","Mobile Responsive"],
+        "addOns": ["Whatsapp Bubble"],
         "iconHref":"money.svg"
     },
     {
-        "title":"Standard website",
-        "desc":"For growing teams",
-        "oriPrice": 20,
-        "price": 10,
+        "title":"Business Website",
+        "desc":"Professional website to showcase your business and attract customers",
+        "oriPrice": 999,
+        "price": 699,
         "renewal": 10,
-        "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
-        "addOns": ["All addons in Budget Package", "Additional Storage - $5", "Additional Bandwidth - $5"],
+        "features": ["3 Pages", "1yr free .com domain ", "1yr free hosting","Mobile Responsive","Advance SEO optimization" ],
+        "addOns": ["All addons in Budget Package", "Google Map Integration", "Unlimited Business Email"],
         "iconHref":"business-bag.svg"
     },
     {
-        "title":"Premium website",
-        "desc":"For large teams",
-        "oriPrice": 30,
-        "price": 15,
+        "title":"Catalog website",
+        "desc":"Launch your online store and sell products effectively.",
+        "oriPrice": 1299,
+        "price": 999,
         "renewal": 15,
-        "features": ["1 Pages", "1yr free .com domain ", "1yr free hosting", "Unlimited Bandwidth"],
-        "addOns": ["All addons in Standard Package", "Contact Form", "5 Business Email"],
+        "features": ["5 Pages","1 product list page", "1yr free .com domain ", "1yr free hosting","Mobile Responsive","Advance SEO optimization"],
+        "addOns": ["All addons in Standard Package", "User Interface Product Management (CMS)","Modify / Update website by yourself"],
         "iconHref":"diamond.svg"
     }
 ]
