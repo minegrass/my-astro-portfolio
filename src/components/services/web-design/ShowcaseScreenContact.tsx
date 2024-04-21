@@ -71,7 +71,7 @@ const HeaderBar = () => {
 
   const GeneralScreen = () => {
     return(<div className="flex flex-col items-center gap-y-3">
-      <h1 className="font-bold text-3xl">Contact us now!</h1>
+      <h1 className="font-bold text-3xl flex justify-center items-center text-center">Contact us now!</h1>
       <a href="https://www.m.me/61558743742138" className="p-5 bg-gray-100 rounded-full drop-shadow-md hover:bg-gray-200 ease-in-out transition-all">
         <WhatsappSVG width={50} height={50}/>
       </a>

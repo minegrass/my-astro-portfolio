@@ -15,7 +15,7 @@
         "desc":"Professional website to showcase your business and attract customers",
         "oriPrice": 999,
         "price": 699,
-        "renewal": 10,
+        "renewal": 199,
         "features": ["3 Pages", "1yr free .com domain ", "1yr free hosting","Mobile Responsive","Advance SEO optimization" ],
         "addOns": ["All addons in Budget Package", "Google Map Integration", "Unlimited Business Email"],
         "iconHref":"business-bag.svg"
@@ -25,7 +25,7 @@
         "desc":"Launch your online store and sell products effectively.",
         "oriPrice": 1299,
         "price": 999,
-        "renewal": 15,
+        "renewal": 299,
         "features": ["5 Pages","1 product list page", "1yr free .com domain ", "1yr free hosting","Mobile Responsive","Advance SEO optimization"],
         "addOns": ["All addons in Standard Package", "User Interface Product Management (CMS)","Modify / Update website by yourself"],
         "iconHref":"diamond.svg"
