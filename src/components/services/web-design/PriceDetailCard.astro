@@ -16,7 +16,7 @@ const svgFilePath = "../../../../services/web-design/svg/";
 const svgFile = svgFilePath + iconHref;
 ---
 
-<div class="drop-shadow-md">
+<div class="drop-shadow-md appears-animation">
     <div
         class="border-2 border-web-border bg-web-foreground flex flex-col rounded-xl p-10 pb-6 drop-shadow-md"
     >
@@ -84,3 +84,13 @@ const svgFile = svgFilePath + iconHref;
         </div>
     </div>
 </div>
+
+<script>
+    import gsap from "gsap";
+    let tl = gsap.timeline();
+    tl.from(".appears-animation", {
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+    });
+</script>

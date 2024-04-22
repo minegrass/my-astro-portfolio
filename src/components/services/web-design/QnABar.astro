@@ -1,0 +1,79 @@
+---
+interface props {
+  question: string;
+  answer: string;
+  id: string;
+}
+
+const { question, answer, id } = Astro.props;
+---
+
+<div
+  class="border-2 border-web-border p-4 rounded-xl px-5 bg-web-foreground drop-shadow-md swipe-in-animation"
+>
+  <input type="checkbox" class="hidden peer w-full qna-checkbox" id={id} />
+  <span class="peer-checked:rotate-90 inline-block text-3xl">➡️</span>
+  <label for={id} class="text-2xl font-bold inline-block w-[90%]"
+    >{question}</label
+  >
+
+  <div id={"collapse-div-" + id} class="hidden-collapse hidden py-2">
+    <div class="w-full bg-web-copy-lighter h-[1px] mb-2"></div>
+    <p>{answer}</p>
+  </div>
+</div>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".swipe-in-animation", {
+    scrollTrigger: {
+      trigger: "#qna-section",
+      start: "top center",
+      end: "center center",
+      scrub: true,
+    },
+    x: -200,
+    opacity: 0,
+    stagger: 0.5,
+  });
+
+  // trigger animation when checkbox is checked
+  const checkboxes = document.querySelectorAll(".qna-checkbox");
+  // get the id for each checkbox when checked
+  let openTl = gsap.timeline();
+  openTl.set(
+    `.hidden-collapse`,
+    {
+      height: 0,
+      display: "none",
+    },
+    0,
+  );
+  openTl.fromTo(
+    `.hidden-collapse`,
+    {
+      height: 0,
+      display: "none",
+    },
+    {
+      height: 100,
+      display: "block",
+      duration: 0.5,
+      ease: "power2.inOut",
+    },
+  );
+  checkboxes.forEach((checkbox) => {
+    const collapseId = checkbox.id;
+
+    checkbox.addEventListener("change", (e: any) => {
+      if (e.target.checked) {
+        console.log(`collapse-div-${collapseId}`);
+        openTl.play();
+      } else {
+        openTl.reverse();
+      }
+    });
+  });
+</script>
