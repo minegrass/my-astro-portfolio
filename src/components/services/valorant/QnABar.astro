@@ -12,15 +12,13 @@ const { question, answer, id } = Astro.props;
     <input type="checkbox" name="detail-one" id={id} />
     <details open>
         <summary>
-            <label for={id} class="text-3xl font-bold px-5"
-                >Click to open and close smoothly with pure CSS</label
+            <label for={id} class="text-2xl font-bold px-5"
+                >{question}</label
             >
         </summary>
         <div class="content">
             <p class="m-2 text-xl">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero,
-                maxime modi error facilis quidem dolores temporibus consequuntur
-                aut ratione aperiam!
+                {answer}
             </p>
         </div>
     </details>
@@ -78,7 +76,7 @@ const { question, answer, id } = Astro.props;
 
     input:checked + details,
     details:has(input:checked) {
-        max-height: 8em; /* Set a max-height value enough to show all the content */
+        max-height: 25em; /* Set a max-height value enough to show all the content */
     }
 
     input:checked + details label::before,

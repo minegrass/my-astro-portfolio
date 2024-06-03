@@ -12,23 +12,23 @@ import QnABar from "../../../components/services/valorant/QnABar.astro";
       <div
         class="justify-center flex flex-col items-center bg-red-500 py-10 text-shadow-normal"
       >
-        <h1 class="text-8xl">
+        <h1 class="text-3xl lg:text-8xl">
           <span class="valo-font">Tom</span> Valorant Boosting
         </h1>
-        <h2 class="text-3xl">
+        <h2 class="text-xl text-center lg:text-3xl">
           Fast, safe, and anonymous Valorant rank boost service in Malaysia
         </h2>
       </div>
     </div>
     <!-- seperator -->
-    <div class="my-10"></div>
+    <div class="my-10 mt-24"></div>
     <!-- services available -->
     <ServiceOptionSection client:load transition:persist />
   </main>
   <!-- seperator -->
   <div class="my-10"></div>
   <!-- Extra Add On -->
-  <section class="mx-10">
+  <section class="mx-10 mt-24">
     <div class="flex justify-center items-center">
       <h1
         class="text-2xl bg-red-500 px-5 py-2 rounded-xl mb-5 font-bold text-shadow"
@@ -68,37 +68,36 @@ import QnABar from "../../../components/services/valorant/QnABar.astro";
         ]}
       />
     </div>
+    
   </section>
-
+  <div class="my-12"></div>
   <!-- seperator -->
-  <div class="my-10"></div>
+  
   <!-- QnA -->
-  <div>
+  <div class="mt-24">
     <h2 class="text-4xl ml-5 mb-5">Frequently Asked Questions</h2>
     <div class="flex flex-col gap-y-5 mx-10">
       <QnABar
         id="one"
         question="How much is placement matches?"
-        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+        answer="Placement Match is Rm6/win and RM25 for 5 wins"
       />
 
       <QnABar
         id="two"
         question="Is this service safe?"
-        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+        answer="Yes, We dont hack valorant either hack your accounts. If you are the account creator (first owner) you can definetly get back the account with no worries!"
       />
 
       <QnABar
         id="three"
-        question="Is this service safe?"
-        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
+        question="How can i pay you guys?"
+        answer="Just Click the contact button below, choose a platform you like to use and message us! We Don't Bite!"
       />
 
-      <QnABar
-        id="four"
-        question="Is this service safe?"
-        answer="Yes, we are a professional Valorant boosting service provider in Malaysia. We have been in the business for years and have served hundreds of customers. "
-      />
+      <div class="my-12"></div>
     </div>
+    
   </div>
+  
 </ValorantLayout>
